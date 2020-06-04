@@ -11,11 +11,11 @@ This repo will contain the main portfolio site.
 - [x] setup digital ocean
 - [x] ssl
 - [x] simple deployment via webhook
-- [] theming overhaul with rebass
-- [] proper behaviour with redux + thunk
-- [] github project list integration
-- [] spotify integration
-- [] instagram integration
-- [] fix old broken projects with database...?
-- [] stuff
-- [] more stuff
+- [ ] theming overhaul with rebass
+- [ ] proper behaviour with redux + thunk
+- [ ] github project list integration
+- [ ] spotify integration
+- [ ] instagram integration
+- [ ] fix old broken projects with database...?
+- [ ] stuff
+- [ ] more stuff
