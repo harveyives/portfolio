@@ -9,6 +9,7 @@ export const replaceRenderer = ({
   replaceBodyHTMLString,
   setHeadComponents,
 }) => {
+  //  TODO remove?
   // React Context in SSR/build
   const ConnectedBody = () => <AppProvider>{bodyComponent}</AppProvider>;
   replaceBodyHTMLString(renderToString(<ConnectedBody />));
@@ -22,3 +23,6 @@ export const replaceRenderer = ({
 
 // Page Transitions
 export const wrapPageElement = wrapPageElementWithTransition;
+
+import wrapWithProvider from "./wrap-with-provider"
+export const wrapRootElement = wrapWithProvider
