@@ -5,18 +5,20 @@ import Box from 'components/box';
 import Title from 'components/title';
 import Gallery from 'components/gallery';
 import IOExample from 'components/io-example';
-import { graphql } from 'gatsby';
-import Counter from "../components/counter";
+import {graphql} from 'gatsby';
+import AddTodo from "../containers/AddTodo";
+import VisibleTodoList from "../containers/VisibleTodoList";
 
-const Index = ({ data }) => (
+const Index = ({data}) => (
   <Layout>
     <Box>
       <Title as="h2" size="large">
         {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
       </Title>
-      <Counter />
+      <AddTodo/>
+      <VisibleTodoList/>
     </Box>
-    <Gallery items={data.homeJson.gallery} />
+    <Gallery items={data.homeJson.gallery}/>
     <div style={{ height: '50vh' }} />
     <IOExample />
   </Layout>
