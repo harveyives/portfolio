@@ -5,31 +5,8 @@ import Box from 'components/box';
 import Title from 'components/title';
 import Gallery from 'components/gallery';
 import IOExample from 'components/io-example';
-import Modal from 'containers/modal';
 import { graphql } from 'gatsby';
-import {connect} from 'react-redux';
-
-const Counter = ({ count, increment }) => (
-  <div>
-    <p>Count: {count}</p>
-    <button onClick={increment}>Increment</button>
-  </div>
-)
-
-Counter.propTypes = {
-  count: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired,
-}
-
-const mapStateToProps = ({ count }) => {
-  return { count }
-}
-
-const mapDispatchToProps = dispatch => {
-  return { increment: () => dispatch({ type: `INCREMENT` }) }
-}
-
-const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter)
+import Counter from "../components/counter";
 
 const Index = ({ data }) => (
   <Layout>
@@ -37,7 +14,7 @@ const Index = ({ data }) => (
       <Title as="h2" size="large">
         {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
       </Title>
-      <ConnectedCounter />
+      <Counter />
     </Box>
     <Gallery items={data.homeJson.gallery} />
     <div style={{ height: '50vh' }} />
