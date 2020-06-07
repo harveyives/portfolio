@@ -1,27 +1,30 @@
-import React from 'react'
+import {addTodo} from '../features/todos/todosSlice'
+import React, {useState} from 'react'
 import {connect} from 'react-redux'
-import {addTodo} from '../actions'
 
-const AddTodo = ({dispatch}) => {
-  let input
+const mapDispatch = {addTodo}
 
+const AddTodo = ({addTodo}) => {
+  const [todoText, setTodoText] = useState('')
+
+  const onChange = e => setTodoText(e.target.value)
   return (
     <div>
-      <form onSubmit={e => {
-        e.preventDefault()
-        if (!input.value.trim()) {
-          return
-        }
-        dispatch(addTodo(input.value))
-        input.value = ''
-      }}>
-        <input ref={node => input = node}/>
-        <button type="submit">
-          Add Todo
-        </button>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          if (!todoText.trim()) {
+            return
+          }
+          addTodo(todoText)
+          setTodoText('')
+        }}
+      >
+        <input value={todoText} onChange={onChange}/>
+        <button type="submit">Add Todo</button>
       </form>
     </div>
   )
 }
 
-export default connect()(AddTodo)
+export default connect(null, mapDispatch)(AddTodo)
