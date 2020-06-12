@@ -5,7 +5,7 @@ import {getMusicHistory} from "./musicHistorySlice";
 export const MusicHistory = () => {
   const dispatch = useDispatch()
 
-  const {data, error} = useSelector(
+  const {meta, tracks, loading, error} = useSelector(
     (state) => state.musicHistory
   )
 
@@ -22,11 +22,18 @@ export const MusicHistory = () => {
     )
   }
 
-  console.log(data)
-
+  console.log(tracks);
+  console.log(meta);
   return (
     <div>
-      data
+      {loading && <div>loading</div>}
+      {!loading &&
+      <div>done loading
+        <ul>
+          {tracks.slice(0, 10).map((it, i) => <li key={i}>{it.name}</li>)}
+        </ul>
+      </div>
+      }
     </div>
   )
 }

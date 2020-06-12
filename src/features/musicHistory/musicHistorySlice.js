@@ -3,15 +3,19 @@ import {fetchMusicHistory} from "../../api/lastFM";
 
 const musicHistory = createSlice({
   name: 'musicHistory',
-  initialState: {data: null, error: null},
+  initialState: {meta: null, tracks: null, error: null, loading: true},
   reducers: {
     getMusicHistorySuccess(state, action) {
-      state.data = action.payload
-      state.error = null
+      state.meta = action.payload.recenttracks['@attr'];
+      state.tracks = action.payload.recenttracks.track;
+      state.error = null;
+      state.loading = false;
     },
     getMusicHistoryFailed(state, action) {
-      state.data = null
-      state.error = action.payload
+      state.meta = null;
+      state.tracks = null;
+      state.error = action.payload;
+      state.loading = false;
     }
   }
 })
@@ -19,7 +23,7 @@ const musicHistory = createSlice({
 export const {
   getMusicHistorySuccess,
   getMusicHistoryFailed
-} = musicHistory.actions
+} = musicHistory.actions;
 
 export default musicHistory.reducer
 
