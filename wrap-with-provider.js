@@ -12,5 +12,13 @@ export default ({element}) => {
   const store = configureStore({
     reducer: rootReducer,
   });
+
+  if (process.env.NODE_ENV === 'development' && module.hot) {
+    module.hot.accept('./src/reducers', () => {
+      const newRootReducer = require('./src/reducers').default
+      store.replaceReducer(newRootReducer)
+    })
+  }
+
   return <Provider store={store}>{element}</Provider>
 }

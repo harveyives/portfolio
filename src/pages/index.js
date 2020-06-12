@@ -8,6 +8,7 @@ import IOExample from 'components/io-example';
 import {graphql} from 'gatsby';
 import AddTodo from "../containers/AddTodo";
 import VisibleTodoList from "../containers/VisibleTodoList";
+import {MusicHistory} from "../features/musicHistory/musicHistory";
 
 const Index = ({data}) => (
   <Layout>
@@ -16,6 +17,7 @@ const Index = ({data}) => (
         {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
       </Title>
       <AddTodo/>
+      <MusicHistory/>
       <VisibleTodoList/>
     </Box>
     <Gallery items={data.homeJson.gallery}/>
