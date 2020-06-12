@@ -24,13 +24,24 @@ export const MusicHistory = () => {
 
   console.log(tracks);
   console.log(meta);
+
+  const track_limit = 5;
+  // [0,1,2,3] => [sm,md,lg,xl]
+  const track_image_size = 2;
+
   return (
     <div>
       {loading && <div>loading</div>}
       {!loading &&
       <div>done loading
         <ul>
-          {tracks.slice(0, 10).map((it, i) => <li key={i}>{it.name}</li>)}
+          {tracks.slice(0, track_limit).map((it, i) =>
+            <li key={i}>
+              {/* TODO add blur-in effect to this */}
+              <img key={i} src={it.image[track_image_size]['#text']} alt={it.name}/>
+              <div>{it.name}</div>
+            </li>
+          )}
         </ul>
       </div>
       }
