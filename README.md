@@ -11,12 +11,14 @@ This repo will contain the main portfolio site.
 - [x] setup digital ocean
 - [x] ssl
 - [x] simple deployment via webhook
-- [ ] theming overhaul with rebass
-- [ ] proper behaviour with redux + thunk
+- [ ] learn and build with Gatsby JS
+- [ ] theming overhaul with ~~rebass~~ chakra-ui
+- [ ] proper behaviour with ~~redux + thunk~~ redux-toolkit (handle all the nasty stuff)
 - [ ] github project list integration
 - [ ] spotify integration
 - [ ] instagram integration
 - [ ] fix old broken projects with database...?
 - [ ] view old versions of portfolio site via some archive mode
+- [ ] blog...?
 - [ ] stuff
 - [ ] more stuff
