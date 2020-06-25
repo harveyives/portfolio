@@ -29,5 +29,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `38256945`, // harveyives, window._sharedData.entry_data.ProfilePage[0].graphql.user.id on profile
+        maxPosts: 12,
+      },
+    },
   ],
 };

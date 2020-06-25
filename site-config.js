@@ -1,5 +1,5 @@
 const path = require('path');
-
+// TODO fix these...
 module.exports = {
   siteTitle: `Gatsby Universal`,
   siteTitleShort: `GatsbyU`,

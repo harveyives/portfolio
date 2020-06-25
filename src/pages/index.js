@@ -2,27 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Box from 'components/box';
-import Title from 'components/title';
 import Gallery from 'components/gallery';
-import IOExample from 'components/io-example';
 import {graphql} from 'gatsby';
-import AddTodo from "../containers/AddTodo";
-import VisibleTodoList from "../containers/VisibleTodoList";
 import {MusicHistory} from "../features/musicHistory/musicHistory";
 
 const Index = ({data}) => (
   <Layout>
     <Box>
-      <Title as="h2" size="large">
-        {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
-      </Title>
-      <AddTodo/>
+      {/*<Title as="h2" size="large">*/}
+      {/*  {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}*/}
+      {/*</Title>*/}
+      <div dangerouslySetInnerHTML={{__html: data.homeJson.content.childMarkdownRemark.html}}/>
       <MusicHistory/>
-      <VisibleTodoList/>
     </Box>
     <Gallery items={data.homeJson.gallery}/>
     <div style={{ height: '50vh' }} />
-    <IOExample />
   </Layout>
 );
 
