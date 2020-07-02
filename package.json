@@ -19,13 +19,18 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/core": "^1.0.0-next.4",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@reach/dialog": "^0.2.0",
     "@reach/router": "^1.2.1",
     "@reach/visually-hidden": "^0.1.1",
     "@reduxjs/toolkit": "^1.3.6",
     "babel-plugin-styled-components": "^1.10.0",
+    "emotion-theming": "^10.0.27",
     "gatsby": "^2.3.26",
     "gatsby-image": "^2.0.39",
+    "gatsby-plugin-chakra-ui": "^1.0.0-next.4",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-react-svg": "^2.0.0",
