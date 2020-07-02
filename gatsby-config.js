@@ -36,5 +36,6 @@ module.exports = {
         maxPosts: 12,
       },
     },
+    `gatsby-plugin-chakra-ui`
   ],
 };
