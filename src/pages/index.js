@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'components/layout';
-import Box from 'components/box';
-import Gallery from 'components/gallery';
+import {Box} from '@chakra-ui/core'
 import {graphql} from 'gatsby';
 import {MusicHistory} from "../features/musicHistory/musicHistory";
 
@@ -14,8 +13,8 @@ const Index = ({data}) => (
       {/*</Title>*/}
       <div dangerouslySetInnerHTML={{__html: data.homeJson.content.childMarkdownRemark.html}}/>
       <MusicHistory/>
+
     </Box>
-    <Gallery items={data.homeJson.gallery}/>
     <div style={{ height: '50vh' }} />
   </Layout>
 );
