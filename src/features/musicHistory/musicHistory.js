@@ -1,16 +1,16 @@
-import React, {useEffect} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {getMusicHistory} from "./musicHistorySlice";
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {getMusicHistory} from './musicHistorySlice';
 
 export const MusicHistory = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const {meta, tracks, loading, error} = useSelector(
-    (state) => state.musicHistory
-  )
+    state => state.musicHistory
+  );
 
   useEffect(() => {
-    dispatch(getMusicHistory())
+    dispatch(getMusicHistory());
   }, []);
 
   if (error) {
@@ -19,7 +19,7 @@ export const MusicHistory = () => {
         <h1>Something went wrong...</h1>
         <div>{error}</div>
       </div>
-    )
+    );
   }
 
   console.log(tracks);
@@ -32,19 +32,24 @@ export const MusicHistory = () => {
   return (
     <div>
       {loading && <div>loading</div>}
-      {!loading &&
-      <div>done loading
-        <ul>
-          {tracks.slice(0, track_limit).map((it, i) =>
-            <li key={i}>
-              {/* TODO add blur-in effect to this */}
-              <img key={i} src={it.image[track_image_size]['#text']} alt={it.name}/>
-              <div>{it.name}</div>
-            </li>
-          )}
-        </ul>
-      </div>
-      }
+      {!loading && (
+        <div>
+          done loading
+          <ul>
+            {tracks.slice(0, track_limit).map((it, i) => (
+              <li key={i}>
+                {/* TODO add blur-in effect to this */}
+                <img
+                  key={i}
+                  src={it.image[track_image_size]['#text']}
+                  alt={it.name}
+                />
+                <div>{it.name}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};

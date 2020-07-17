@@ -1,5 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit'
-import {fetchMusicHistory} from "../../api/lastFM";
+import {createSlice} from '@reduxjs/toolkit';
+import {fetchMusicHistory} from '../../api/lastFM';
 
 const musicHistory = createSlice({
   name: 'musicHistory',
@@ -16,16 +16,16 @@ const musicHistory = createSlice({
       state.tracks = null;
       state.error = action.payload;
       state.loading = false;
-    }
-  }
-})
+    },
+  },
+});
 
 export const {
   getMusicHistorySuccess,
-  getMusicHistoryFailed
+  getMusicHistoryFailed,
 } = musicHistory.actions;
 
-export default musicHistory.reducer
+export default musicHistory.reducer;
 
 export const getMusicHistory = () => async dispatch => {
   await fetchMusicHistory().then(
@@ -33,5 +33,5 @@ export const getMusicHistory = () => async dispatch => {
     musicHistory => dispatch(getMusicHistorySuccess(musicHistory)),
     // error callback
     err => dispatch(getMusicHistoryFailed(err.toString()))
-  )
-}
+  );
+};
