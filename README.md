@@ -30,5 +30,6 @@ This repo will contain the main portfolio site.
 - [ ] blog...?
     - [ ] dissertation
     - [ ] raytracer
+- [ ] add some friends websites to a footer
 - [ ] stuff
 - [ ] more stuff
