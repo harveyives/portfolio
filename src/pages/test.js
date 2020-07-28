@@ -1,5 +1,4 @@
-require('intersection-observer');
-
+import {IconButton} from "@chakra-ui/button";
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
@@ -11,18 +10,29 @@ import {FaInstagram} from 'react-icons/all';
 import {useDisclosure} from "@chakra-ui/hooks";
 import styled from '@emotion/styled'
 
+require('intersection-observer');
+
+const steps = 8;
 
 const BlurredImg = styled(Img)`
+  transform: translateZ(0.1px) scale(1.04);
+  -webkit-transition: 0.6s filter steps(${steps});
+  -moz-transition: 0.6s filter steps(${steps});
+  -ms-transition: 0.6s filter steps(${steps});
+  -o-transition: 0.6s filter steps(${steps});
+  transition: 0.6s filter steps(${steps});
+  transition-delay: ${props => props.isOpen ? '0.8s' : '0s'};
   filter: ${props => props.isOpen ? 'blur(4px)' : 0};
-  transform: scale(1.04);
-  transition: 0.6s filter linear;
-  transition-delay: ${props => props.isOpen ? '0.8s' : '0s'};
 `
-
+//maybe refactor this to just be &:hover
 const AppearingBox = styled(Box)`
-  opacity: ${props => props.isOpen ? '100%' : '0%'};
-  transition: 0.6s filter linear;
+  -webkit-transition: 0.6s opacity steps(${steps});
+  -moz-transition: 0.6s opacity steps(${steps});
+  -ms-transition: 0.6s opacity steps(${steps});
+  -o-transition: 0.6s opacity steps(${steps});
+  transition: 0.6s opacity steps(${steps});
   transition-delay: ${props => props.isOpen ? '0.8s' : '0s'};
+  opacity: ${props => props.isOpen ? 1 : 0};
 `
 
 const imageGrid = {
@@ -36,9 +46,19 @@ const InstagramIcon = props => (
   <Flex h={'100%'} w={'100%'} pos={'absolute'} justify={'center'}>
     <Box w={100 / props.columns + '%'} h={'100%'} align={'center'}>
       <Flex align={'center'} justify="center" h={'100%'} w={'100%'}>
-        <AspectRatio ratio={'1'} w={'65%'} alignItems={'center'}>
-          <AppearingBox bg={'white'} borderRadius={'50%'} isOpen={props.isOpen}>
-            <FaInstagram size={'60%'}/>
+        <AspectRatio ratio={'1'} w={'70%'} alignItems={'center'}>
+          <AppearingBox isOpen={props.isOpen}>
+            <IconButton
+              bg={'white'}
+              isRound={true}
+              variant="link"
+              h={'90%'}
+              w={'90%'}
+              icon={<FaInstagram
+                size="60%"
+                color={'black'}
+              />}
+            />
           </AppearingBox>
         </AspectRatio>
       </Flex>
@@ -49,15 +69,18 @@ const InstagramIcon = props => (
 const Test = function ({data}) {
   const deviceSize = useBreakpoint();
   const {isOpen, onOpen, onClose, onToggle} = useDisclosure()
-  console.log(isOpen);
+
   return (
     <div>
       <Box height={1000} bg="green.100"/>
       <InView
         as="div"
         threshold={1}
-        onChange={onToggle}
+        onChange={(inView) => {
+          inView ? onOpen() : onClose()
+        }}
       >
+
         <Grid pos={'relative'} style={{overflow: 'hidden'}}>
           <Grid
             templateColumns={`repeat(${imageGrid.columns[deviceSize]}, 1fr)`}

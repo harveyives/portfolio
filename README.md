@@ -23,6 +23,7 @@ This repo will contain the main portfolio site.
     - [ ] theme
     - [ ] ifttt webhook to rebuild on new instagram post
 - [ ] theming overhaul with ~~rebass~~ chakra-ui
+    - [ ] dark theme
 - [x] proper behaviour with ~~redux + thunk~~ redux-toolkit (handle all the nasty stuff)
 - [ ] github project list integration
 - [ ] fix old broken projects with database... or download static copies...?
