@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
 import Img from 'gatsby-image';
-import {Box, Grid, useBreakpoint} from '@chakra-ui/core';
+import {Box, Grid, Link, useBreakpoint} from '@chakra-ui/core';
 import {InView} from 'react-intersection-observer';
 import {AspectRatio, Flex} from '@chakra-ui/layout';
 import {FaInstagram} from 'react-icons/all';
@@ -48,17 +48,21 @@ const InstagramIcon = props => (
       <Flex align={'center'} justify="center" h={'100%'} w={'100%'}>
         <AspectRatio ratio={'1'} w={'70%'} alignItems={'center'}>
           <AppearingBox isOpen={props.isOpen}>
-            <IconButton
-              bg={'white'}
-              isRound={true}
-              variant="link"
-              h={'90%'}
-              w={'90%'}
-              icon={<FaInstagram
-                size="60%"
-                color={'black'}
-              />}
-            />
+            <Link href={'https://instagram.com/harveyives'}
+                  h={'90%'}
+                  w={'90%'}>
+              <IconButton
+                bg={'white'}
+                isRound
+                variant={'link'}
+                h={'100%'}
+                w={'100%'}
+                icon={<FaInstagram
+                  size={'60%'}
+                  color={'black'}
+                />}
+              />
+            </Link>
           </AppearingBox>
         </AspectRatio>
       </Flex>
