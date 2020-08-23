@@ -1,11 +1,11 @@
 import React from 'react';
-import Box from 'components/box';
-import Layout from 'components/layout';
+import {Container, Text} from '@chakra-ui/layout';
+
 
 const NotFound = () => (
-  <Layout>
-    <Box>Not found.</Box>
-  </Layout>
+  <Container>
+    <Text>Not found.</Text>
+  </Container>
 );
 
 export default NotFound;

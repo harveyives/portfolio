@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { Container } from './nav.css';
+import {Link} from 'gatsby';
+import {Box} from '@chakra-ui/core';
 
 const Nav = () => (
-  <Container>
+  <Box>
     <ul>
       <li>
         <Link to="/about">About</Link>
@@ -12,7 +12,7 @@ const Nav = () => (
         <a href="https://github.com/fabe/gatsby-universal">GitHub</a>
       </li>
     </ul>
-  </Container>
+  </Box>
 );
 
 export default Nav;

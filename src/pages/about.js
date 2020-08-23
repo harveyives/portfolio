@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import Layout from 'components/layout';
-import Box from 'components/box';
-import Head from 'components/head';
+import {graphql} from 'gatsby';
+import {Box} from '@chakra-ui/core';
+import Head from '../components/head'
+import {Container} from "@chakra-ui/layout";
 
-const About = ({ data }) => (
-  <Layout>
-    <Head pageTitle={data.aboutJson.title} />
+const About = ({data}) => (
+  <Container>
+    <Head pageTitle={data.aboutJson.title}/>
     <Box>
       <div
         dangerouslySetInnerHTML={{
@@ -15,7 +15,7 @@ const About = ({ data }) => (
         }}
       />
     </Box>
-  </Layout>
+  </Container>
 );
 
 About.propTypes = {

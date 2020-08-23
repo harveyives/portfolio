@@ -3,8 +3,8 @@ import {Box} from "@chakra-ui/core";
 import React from "react";
 
 const BoxWithHeadings = styled(Box)`
-  * {
-    white-space: pre;
+  p {
+    margin-bottom: 1rem;
   }
 
   h1 { font-size: 4rem; }

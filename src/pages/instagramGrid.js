@@ -70,13 +70,12 @@ const InstagramIcon = props => (
   </Flex>
 );
 
-const Test = function ({data}) {
+const InstagramGrid = function ({data}) {
   const deviceSize = useBreakpoint();
   const {isOpen, onOpen, onClose, onToggle} = useDisclosure()
-
+  console.log(data);
   return (
     <div>
-      <Box height={1000} bg="green.100"/>
       <InView
         as="div"
         threshold={1}
@@ -84,7 +83,6 @@ const Test = function ({data}) {
           inView ? onOpen() : onClose()
         }}
       >
-
         <Grid pos={'relative'} style={{overflow: 'hidden'}}>
           <Grid
             templateColumns={`repeat(${imageGrid.columns[deviceSize]}, 1fr)`}
@@ -109,17 +107,15 @@ const Test = function ({data}) {
           <InstagramIcon columns={imageGrid.columns[deviceSize]} isOpen={isOpen}/>
         </Grid>
       </InView>
-
-      <Box height={200} bg="green.100"/>
     </div>
   );
 };
 
-Test.propTypes = {
+InstagramGrid.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default Test;
+export default InstagramGrid;
 export const query = graphql`
   query {
     allInstaNode(limit: 12, sort: { fields: timestamp, order: DESC }) {
