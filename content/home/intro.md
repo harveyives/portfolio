@@ -1,0 +1,2 @@
+# _Harvey Ives_
+I am a 22 year old student currently studying Computer Science at the University of Bath. I have a keen interest in computers and technology in general. The programming assignments I complete as part of my course are usually written in Java or Python, but I also have experience with C, Haskell and MATLAB. My main goal is to complete my degree to a high standard and then work as a Software Engineer, building applications that make a difference.
