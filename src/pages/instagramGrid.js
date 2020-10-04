@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
 import Img from 'gatsby-image';
 import {Box, Grid, Link, useBreakpoint} from '@chakra-ui/core';
-import {InView} from 'react-intersection-observer';
+if (typeof window !== 'undefined') {
+  require('react-intersection-observer');
+}
 import {AspectRatio, Flex} from '@chakra-ui/layout';
 import {FaInstagram} from 'react-icons/all';
 import {useDisclosure} from "@chakra-ui/hooks";
 import styled from '@emotion/styled'
+import {InView} from "react-intersection-observer";
 
-require('intersection-observer');
 
 const steps = 8;
 
