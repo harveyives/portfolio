@@ -3,7 +3,7 @@ import {Box} from "@chakra-ui/core";
 import React from "react";
 
 const BoxWithHeadings = styled(Box)`
-  p {
+  p, ul, ol {
     margin-bottom: 1rem;
   }
 
