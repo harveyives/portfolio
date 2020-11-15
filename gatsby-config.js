@@ -1,8 +1,20 @@
 const siteConfig = require('./site-config');
+const {createProxyMiddleware} = require("http-proxy-middleware")
 
 module.exports = {
   siteMetadata: {
     ...siteConfig,
+  },
+  developMiddleware: app => {
+    app.use(
+      "/.netlify/functions/",
+      createProxyMiddleware({
+        target: "http://localhost:9000",
+        pathRewrite: {
+          "/.netlify/functions/": "",
+        },
+      })
+    );
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,7 +38,6 @@ module.exports = {
             },
           },
           `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
       },

@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {fetchMusicHistory} from '../../api/lastFM';
+import {fetchMusicHistory} from '../../api/musicHistory';
 
 const musicHistory = createSlice({
   name: 'musicHistory',
