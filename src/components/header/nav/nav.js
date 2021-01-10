@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import {Box} from '@chakra-ui/core';
+import {Box} from '@chakra-ui/react';
 
 const Nav = () => (
   <Box>

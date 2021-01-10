@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {Box} from "@chakra-ui/core";
+import {Box} from "@chakra-ui/react";
 import React from "react";
 
 const BoxWithHeadings = styled(Box)`

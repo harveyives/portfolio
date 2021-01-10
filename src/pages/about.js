@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
-import {Box} from '@chakra-ui/core';
+import {Box} from '@chakra-ui/react';
 import Head from '../components/head'
 import {Container} from "@chakra-ui/layout";
 

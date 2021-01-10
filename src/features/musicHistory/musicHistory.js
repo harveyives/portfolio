@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getMusicHistory} from './musicHistorySlice';
-import {Tooltip, VStack} from '@chakra-ui/core';
+import {Tooltip, VStack} from '@chakra-ui/react';
 import {Box, Center, Grid, Text} from "@chakra-ui/layout";
 import moment from 'moment';
 import {CircularProgress} from "@chakra-ui/progress";

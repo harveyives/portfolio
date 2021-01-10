@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Box} from '@chakra-ui/core';
+import {Box} from '@chakra-ui/react';
 import {graphql} from 'gatsby';
 import {MusicHistory} from '../features/musicHistory/musicHistory';
 import InstagramGrid from "./instagramGrid";
