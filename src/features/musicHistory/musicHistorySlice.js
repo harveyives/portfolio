@@ -1,5 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {fetchMusicHistory} from '../../api/musicHistory';
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchMusicHistory } from '../../api/musicHistory';
 
 const musicHistory = createSlice({
   name: 'musicHistory',
@@ -29,9 +29,7 @@ export default musicHistory.reducer;
 
 export const getMusicHistory = () => async dispatch => {
   await fetchMusicHistory().then(
-    // success callback
     musicHistory => dispatch(getMusicHistorySuccess(musicHistory)),
-    // error callback
     err => dispatch(getMusicHistoryFailed(err.toString()))
   );
 };

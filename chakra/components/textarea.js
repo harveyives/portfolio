@@ -1,4 +1,4 @@
-import Input, {InputSizes, InputVariants} from './input';
+import Input, { InputSizes, InputVariants } from './input';
 
 const Textarea = {
   ...Input,

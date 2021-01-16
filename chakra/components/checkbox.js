@@ -1,4 +1,4 @@
-import {mode} from '@chakra-ui/theme-tools';
+import { mode } from '@chakra-ui/theme-tools';
 
 function getCheckedStyle(props) {
   const {colorScheme: c} = props;
@@ -48,7 +48,7 @@ const baseStyle = props => {
     },
     Label: {
       _disabled: {
-        opacity: 0.4
+        opacity: 0.4,
       },
     },
   };
@@ -58,28 +58,28 @@ const sizes = {
   sm: {
     Control: {
       height: 3,
-      width: 3
+      width: 3,
     },
     Label: {
-      fontSize: 'sm'
+      fontSize: 'sm',
     },
   },
   md: {
     Control: {
       width: 4,
-      height: 4
+      height: 4,
     },
     Label: {
-      fontSize: 'md'
+      fontSize: 'md',
     },
   },
   lg: {
     Control: {
       width: 5,
-      height: 5
+      height: 5,
     },
     Label: {
-      fontSize: 'lg'
+      fontSize: 'lg',
     },
   },
 };

@@ -1,4 +1,4 @@
-import {getColor, mode} from '@chakra-ui/theme-tools';
+import { getColor, mode } from '@chakra-ui/theme-tools';
 
 function getLineStyle(props) {
   const {colorScheme: c} = props;
@@ -39,7 +39,7 @@ function getEnclosedStyle(props) {
       _selected: {
         color: mode(`${c}.600`, `${c}.300`)(props),
         borderColor: 'inherit',
-        borderBottomColor: mode(`white`, `gray.800`)(props),
+        borderBottomColor: mode('white', 'gray.800')(props),
       },
     },
     TabList: {
@@ -57,13 +57,13 @@ function getEnclosedColoredStyle(props) {
     Tab: {
       border: '1px solid',
       borderColor: 'inherit',
-      bg: mode(`gray.50`, `whiteAlpha.50`)(props),
+      bg: mode('gray.50', 'whiteAlpha.50')(props),
       marginBottom: '-1px',
       _notLast: {
         mr: '-1px',
       },
       _selected: {
-        bg: mode(`#fff`, 'gray.800')(props),
+        bg: mode('#fff', 'gray.800')(props),
         color: mode(`${c}.600`, `${c}.300`)(props),
         borderColor: 'inherit',
         borderTopColor: 'currentColor',
@@ -104,7 +104,7 @@ function getSolidRoundedStyle(props) {
       fontWeight: 'semibold',
       color: mode('gray.600', 'inherit')(props),
       _selected: {
-        color: mode(`#fff`, 'gray.800')(props),
+        color: mode('#fff', 'gray.800')(props),
         bg: mode(`${c}.600`, `${c}.300`)(props),
       },
     },

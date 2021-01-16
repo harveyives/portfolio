@@ -1,8 +1,8 @@
 import React from 'react';
-import {renderToString} from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import AppProvider from 'store/provider';
 import wrapPageElementWithTransition from 'helpers/wrapPageElement';
-import wrapWithProvider from "./wrap-with-provider"
+import wrapWithProvider from './wrap-with-provider';
 
 export const replaceRenderer = ({
   bodyComponent,
@@ -18,4 +18,4 @@ export const replaceRenderer = ({
 // Page Transitions
 export const wrapPageElement = wrapPageElementWithTransition;
 
-export const wrapRootElement = wrapWithProvider
+export const wrapRootElement = wrapWithProvider;

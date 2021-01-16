@@ -1,4 +1,4 @@
-import Input, {InputVariants} from './input';
+import Input, { InputVariants } from './input';
 
 const PinInput = {
   defaultProps: Input.defaultProps,

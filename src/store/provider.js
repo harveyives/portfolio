@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Provider} from './createContext';
+import { Provider } from './createContext';
 
 // The provider, which holds the page-wide store and its actions.
 // Feel free to abstract actions and state away from this file.

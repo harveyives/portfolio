@@ -1,4 +1,4 @@
-import Badge, {BadgeVariants} from './badge';
+import Badge, { BadgeVariants } from './badge';
 
 const Tag = {
   defaultProps: {

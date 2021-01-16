@@ -11,7 +11,7 @@ export default ({
 }) => {
   const isSubPage = pageTitle && location.pathname !== '/';
 
-  let schema = [
+  const schema = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',

@@ -1,4 +1,4 @@
-import {mode} from '@chakra-ui/theme-tools';
+import { mode } from '@chakra-ui/theme-tools';
 
 const Popover = {
   baseStyle: props => ({

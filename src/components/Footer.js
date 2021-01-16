@@ -1,6 +1,6 @@
 import React from 'react';
 import FilterLink from '../containers/FilterLink';
-import {VisibilityFilters} from '../features/filters/filtersSlice';
+import { VisibilityFilters } from '../features/filters/filtersSlice';
 
 const Footer = () => (
   <div>

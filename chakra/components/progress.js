@@ -1,4 +1,4 @@
-import {getColor, mode} from '@chakra-ui/theme-tools';
+import { getColor, mode } from '@chakra-ui/theme-tools';
 
 const getProgressBg = props => {
   const {colorScheme: c, theme: t, isIndeterminate} = props;
@@ -49,7 +49,7 @@ const Progress = {
       fontSize: '0.25em',
     },
     Track: {
-      bg: mode(`gray.100`, `whiteAlpha.300`)(props),
+      bg: mode('gray.100', 'whiteAlpha.300')(props),
     },
     Indicator: {
       height: '100%',

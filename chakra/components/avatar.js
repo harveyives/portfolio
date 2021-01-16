@@ -1,5 +1,5 @@
 import sizes from '../foundations/sizes';
-import {isDark, mode, randomColor} from '@chakra-ui/theme-tools';
+import { isDark, mode, randomColor } from '@chakra-ui/theme-tools';
 
 function getSize(size) {
   const themeSize = sizes[size];
@@ -21,9 +21,11 @@ function getSize(size) {
 
 function getRootStyle(props) {
   const {name, theme: t} = props;
-  const bg = name ? randomColor({
-    string: name
-  }) : 'gray.400';
+  const bg = name
+    ? randomColor({
+      string: name,
+    })
+    : 'gray.400';
   const isBgDark = isDark(bg)(t);
   const color = name ? (isBgDark ? 'white' : 'gray.800') : 'white';
   const borderColor = mode('white', 'gray.800')(props);

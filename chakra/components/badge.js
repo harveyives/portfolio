@@ -1,4 +1,4 @@
-import {getColor, ink, mode, transparentize} from '@chakra-ui/theme-tools';
+import { getColor, ink, mode, transparentize } from '@chakra-ui/theme-tools';
 
 function getSolidStyle(props) {
   const {colorScheme: c, theme: t} = props;
@@ -6,7 +6,7 @@ function getSolidStyle(props) {
 
   return {
     bg: mode(`${c}.500`, dark)(props),
-    color: mode(`white`, `whiteAlpha.800`)(props),
+    color: mode('white', 'whiteAlpha.800')(props),
   };
 }
 
@@ -28,7 +28,7 @@ function getOutlineStyle(props) {
 
   return {
     color,
-    boxShadow: `inset 0 0 0px 1px ` + color,
+    boxShadow: 'inset 0 0 0px 1px ' + color,
   };
 }
 

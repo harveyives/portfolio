@@ -1,7 +1,8 @@
-import {getColor, mode} from '@chakra-ui/theme-tools';
+import { getColor, mode } from '@chakra-ui/theme-tools';
 
 const getDefaults = props => ({
-  focusBorderColor: props.focusBorderColor || mode('blue.500', 'blue.300')(props),
+  focusBorderColor:
+    props.focusBorderColor || mode('blue.500', 'blue.300')(props),
   errorBorderColor: props.errorBorderColor || mode('red.500', 'red.300')(props),
 });
 

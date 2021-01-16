@@ -1,4 +1,4 @@
-import {mode, orient} from '@chakra-ui/theme-tools';
+import { mode, orient } from '@chakra-ui/theme-tools';
 
 const Slider = {
   defaultProps: {
@@ -29,10 +29,10 @@ const Slider = {
       Track: orient({
         orientation: props.orientation,
         horizontal: {
-          height: '4px'
+          height: '4px',
         },
         vertical: {
-          width: '4px'
+          width: '4px',
         },
       }),
     }),
@@ -44,10 +44,10 @@ const Slider = {
       Track: orient({
         orientation: props.orientation,
         horizontal: {
-          height: '2px'
+          height: '2px',
         },
         vertical: {
-          width: '2px'
+          width: '2px',
         },
       }),
     }),
@@ -94,16 +94,16 @@ const Slider = {
         orientation: props.orientation,
         vertical: {
           left: '50%',
-          transform: `translateX(-50%)`,
+          transform: 'translateX(-50%)',
           _active: {
-            transform: `translateX(-50%) scale(1.15)`,
+            transform: 'translateX(-50%) scale(1.15)',
           },
         },
         horizontal: {
           top: '50%',
-          transform: `translateY(-50%)`,
+          transform: 'translateY(-50%)',
           _active: {
-            transform: `translateY(-50%) scale(1.15)`,
+            transform: 'translateY(-50%) scale(1.15)',
           },
         },
       }),

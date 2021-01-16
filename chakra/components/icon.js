@@ -4,19 +4,19 @@ const Icon = {
   },
   sizes: {
     xl: {
-      boxSize: '48px'
+      boxSize: '48px',
     },
     lg: {
-      boxSize: '40px'
+      boxSize: '40px',
     },
     md: {
-      boxSize: '32px'
+      boxSize: '32px',
     },
     sm: {
-      boxSize: '24px'
+      boxSize: '24px',
     },
     xs: {
-      boxSize: '16px'
+      boxSize: '16px',
     },
   },
 };

@@ -1,11 +1,10 @@
-import {copy, mode} from '@chakra-ui/theme-tools';
+import { copy, mode } from '@chakra-ui/theme-tools';
 import Button from './button';
 
 const getMenuListStyle = props => {
-
   return {
-    bg: mode(`#fff`, `gray.700`)(props),
-    boxShadow: mode(`sm`, `dark-lg`)(props),
+    bg: mode('#fff', 'gray.700')(props),
+    boxShadow: mode('sm', 'dark-lg')(props),
     color: 'inherit',
     outline: 0,
     minWidth: '3xs',
@@ -25,13 +24,13 @@ const getMenuItemStyle = props => ({
   paddingX: '0.8rem',
   transition: 'background 50ms ease-in 0s',
   _focus: {
-    bg: mode(`gray.100`, `whiteAlpha.100`)(props),
+    bg: mode('gray.100', 'whiteAlpha.100')(props),
   },
   _active: {
-    bg: mode(`gray.200`, `whiteAlpha.200`)(props),
+    bg: mode('gray.200', 'whiteAlpha.200')(props),
   },
   _expanded: {
-    bg: mode(`gray.100`, `whiteAlpha.100`)(props),
+    bg: mode('gray.100', 'whiteAlpha.100')(props),
   },
   _disabled: {
     opacity: 0.4,

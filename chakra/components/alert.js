@@ -1,4 +1,4 @@
-import {getColor, ink, mode} from '@chakra-ui/theme-tools';
+import { getColor, ink, mode } from '@chakra-ui/theme-tools';
 
 function getSubtleStyle(props) {
   const {theme: t, colorScheme: c} = props;
@@ -8,7 +8,7 @@ function getSubtleStyle(props) {
 
   return {
     Root: {
-      bg
+      bg,
     },
     Icon: {
       color: mode(`${c}.500`, `${c}.200`)(props),
@@ -56,7 +56,7 @@ function getSolidStyle(props) {
   return {
     Root: {
       bg: mode(`${c}.500`, `${c}.200`)(props),
-      color: mode(`white`, `gray.900`)(props),
+      color: mode('white', 'gray.900')(props),
     },
   };
 }

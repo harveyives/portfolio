@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {graphql} from 'gatsby';
-import {Box} from '@chakra-ui/react';
-import Head from '../components/head'
-import {Container} from "@chakra-ui/layout";
+import { graphql } from 'gatsby';
+import { Box } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/layout';
 
 const About = ({data}) => (
   <Container>
-    <Head pageTitle={data.aboutJson.title}/>
     <Box>
       <div
         dangerouslySetInnerHTML={{

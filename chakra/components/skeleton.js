@@ -1,5 +1,5 @@
-import {keyframes} from '@chakra-ui/system';
-import {getColor, mode} from '@chakra-ui/theme-tools';
+import { keyframes } from '@chakra-ui/system';
+import { getColor, mode } from '@chakra-ui/theme-tools';
 
 export const frame = (start, end) => keyframes`
   from {
@@ -13,7 +13,12 @@ export const frame = (start, end) => keyframes`
 `;
 
 export function getBaseStyle(props) {
-  const {startColor = mode('gray.100', 'gray.800')(props), endColor = mode('gray.400', 'gray.600')(props), speed, theme,} = props;
+  const {
+    startColor = mode('gray.100', 'gray.800')(props),
+    endColor = mode('gray.400', 'gray.600')(props),
+    speed,
+    theme,
+  } = props;
   const start = getColor(theme, startColor);
   const end = getColor(theme, endColor);
 

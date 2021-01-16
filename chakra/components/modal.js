@@ -1,4 +1,4 @@
-import {mode} from '@chakra-ui/theme-tools';
+import { mode } from '@chakra-ui/theme-tools';
 
 /**
  * Since the `maxWidth` prop references theme.sizes internally,
@@ -26,7 +26,8 @@ const Modal = {
       bg: mode('white', 'gray.700')(props),
       color: 'inherit',
       marginY: '3.75rem',
-      maxHeight: props.scrollBehavior === 'inside' ? 'calc(100vh - 7.5rem)' : undefined,
+      maxHeight:
+        props.scrollBehavior === 'inside' ? 'calc(100vh - 7.5rem)' : undefined,
       boxShadow: mode(
         '0 7px 14px 0 rgba(0,0,0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, .07)',
         'dark-lg'

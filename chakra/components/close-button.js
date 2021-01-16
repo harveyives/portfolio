@@ -1,4 +1,4 @@
-import {mode} from '@chakra-ui/theme-tools';
+import { mode } from '@chakra-ui/theme-tools';
 
 const CloseButton = {
   defaultProps: {
@@ -13,10 +13,10 @@ const CloseButton = {
       boxShadow: 'none',
     },
     _hover: {
-      bg: mode(`blackAlpha.100`, `whiteAlpha.100`)(props),
+      bg: mode('blackAlpha.100', 'whiteAlpha.100')(props),
     },
     _active: {
-      bg: mode(`blackAlpha.200`, `whiteAlpha.200`)(props),
+      bg: mode('blackAlpha.200', 'whiteAlpha.200')(props),
     },
     _focus: {
       boxShadow: 'outline',

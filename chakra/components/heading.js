@@ -9,22 +9,22 @@ const Heading = {
   },
   sizes: {
     '2xl': {
-      fontSize: ['4xl', null, '5xl']
+      fontSize: ['4xl', null, '5xl'],
     },
     xl: {
-      fontSize: ['3xl', null, '4xl']
+      fontSize: ['3xl', null, '4xl'],
     },
     lg: {
-      fontSize: ['xl', null, '2xl']
+      fontSize: ['xl', null, '2xl'],
     },
     md: {
-      fontSize: 'xl'
+      fontSize: 'xl',
     },
     sm: {
-      fontSize: 'md'
+      fontSize: 'md',
     },
     xs: {
-      fontSize: 'sm'
+      fontSize: 'sm',
     },
   },
 };

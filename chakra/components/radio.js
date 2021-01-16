@@ -1,4 +1,4 @@
-import Checkbox, {CheckboxSizes} from './checkbox';
+import Checkbox, { CheckboxSizes } from './checkbox';
 
 const baseStyle = Checkbox.baseStyle;
 
@@ -11,7 +11,7 @@ const Radio = {
       _checked: {
         ...baseStyle(props).Control['_checked'],
         _before: {
-          content: `""`,
+          content: '""',
           display: 'inline-block',
           position: 'relative',
           width: '50%',

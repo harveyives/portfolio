@@ -1,4 +1,4 @@
-import {mode} from '@chakra-ui/theme-tools';
+import { mode } from '@chakra-ui/theme-tools';
 
 const styles = {
   global: props => ({
@@ -13,7 +13,7 @@ const styles = {
       borderColor: mode('gray.200', 'whiteAlpha.300')(props),
       wordWrap: 'break-word',
     },
-    fontFeatureSettings: `"pnum"`,
+    fontFeatureSettings: '"pnum"',
     fontVariantNumeric: 'proportional-nums',
   }),
 };

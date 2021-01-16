@@ -1,35 +1,49 @@
+import { chakra, Flex, Heading, useColorModeValue, useDisclosure, useUpdateEffect, } from '@chakra-ui/react';
 import React from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
-import posed from 'react-pose';
-import Nav from 'components/header/nav';
 
-// Example of a component-specific page transition
-const AnimatedContainer = posed.div({
-  enter: {
-    y: 0,
-    transition: {
-      ease: 'easeInOut',
-    },
-  },
-  exit: {
-    y: '-100%',
-    transition: {
-      ease: 'easeInOut',
-    },
-  },
-});
+function HeaderContent() {
+  const mobileNav = useDisclosure();
+  const mobileNavBtnRef = React.useRef();
 
-const Header = ({ title }) => (
-  <AnimatedContainer>
-    <Link to="/">{title}</Link>
+  useUpdateEffect(() => {
+    mobileNavBtnRef.current?.focus();
+  }, [mobileNav.isOpen]);
 
-    <Nav/>
-  </AnimatedContainer>
-);
+  return (
+    <>
+      <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
+        <Flex align="center">
+          <chakra.a display="block" aria-label="Chakra UI, Back to homepage">
+            <Heading as={'h1'}>Harvey Ives</Heading>
+          </chakra.a>
+        </Flex>
+      </Flex>
+    </>
+  );
+}
 
-Header.propTypes = {
-  title: PropTypes.string.isRequired,
-};
+function Header(props) {
+  const bg = useColorModeValue('white', 'gray.800');
+  const ref = React.useRef();
+
+  return (
+    <chakra.header
+      ref={ref}
+      shadow={'sm'}
+      transition="box-shadow 0.2s"
+      top="0"
+      bg={bg}
+      left="0"
+      right="0"
+      borderTopColor="teal.400"
+      width="full"
+      {...props}
+    >
+      <chakra.div height="4.5rem" mx="auto" maxW="1200px">
+        <HeaderContent/>
+      </chakra.div>
+    </chakra.header>
+  );
+}
 
 export default Header;
