@@ -1,4 +1,4 @@
-# [ives.one](https://ives.one)
+# [ives.no](https://ives.no)
 
 Rebuilding my personal site with new technologies, skills and ideas.
  
