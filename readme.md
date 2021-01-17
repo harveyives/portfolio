@@ -1,6 +1,6 @@
-# [ives.no](https://ives.no)
+# Portfolio
 
-Rebuilding my personal site with new technologies, skills and ideas.
+Rebuilding my personal site with new technologies, skills and ideas. Available [here](http://www.ives.no).
  
 The current [harveyives.co.uk](http://www.harveyives.co.uk) (2015-2020) is cobbled together using some cheap hosting, php and MySQL - this overhaul plans to fix that.
 
