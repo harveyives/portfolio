@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '@chakra-ui/react';
+import { Box, Container, Text } from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import { MusicHistory } from '../features/musicHistory/musicHistory';
 import InstagramGrid from './instagramGrid';
-import { Container, Text } from '@chakra-ui/layout';
 import { Markdown } from '../components/markdown';
 import Header from '../components/header';
 import Img from 'gatsby-image';
+import { ProjectCard } from '../components/projects/projectCard';
 
 const Index = ({data}) => (
   <Box>
@@ -26,9 +26,7 @@ const Index = ({data}) => (
         </i>
       </Text>
     </Container>
-    {data.allGithubData.nodes.map(it =>
-      it.data.user.pinnedItems.edges.map(e => console.log(e.node))
-    )}
+    {data.githubData.data.user.pinnedItems.edges.map((e, i) => <ProjectCard key={i} data={e.node}/>)}
     <InstagramGrid data={data}/>
     <Box height={40}/>
   </Box>
@@ -56,29 +54,6 @@ export const query = graphql`
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    allGithubData {
-      nodes {
-        data {
-          user {
-            pinnedItems {
-              edges {
-                node {
-                  description
-                  name
-                  object {
-                    text
-                  }
-                  primaryLanguage {
-                    name
-                  }
-                  url
-                }
-              }
-            }
-          }
         }
       }
     }

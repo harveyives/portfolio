@@ -14,7 +14,6 @@ if (typeof window !== 'undefined') {
 }
 
 const steps = 8;
-
 const BlurredImg = styled(Img)`
   transform: translateZ(0.1px) scale(1.04);
   -webkit-transition: 0.6s filter steps(${steps});
@@ -36,15 +35,11 @@ const AppearingBox = styled(Box)`
   opacity: ${props => (props.open ? 1 : 0)};
 `;
 
-const imageGrid = {
-  columns: {base: 3, sm: 4, md: 5, lg: 6, xl: 6},
-  items: {base: 3, sm: 4, md: 5, lg: 12, xl: 12},
-};
+
 
 // LOOK AT HOW MANY SIZING HACKS I HAD TO DO TO GET THIS THING CENTERED. LOOK AT IT. REMOVE ONE AND THE WHOLE THING FALLS OVER
 // THIS IS INSANE
 const InstagramIcon = props => {
-  console.log(props);
   return (
     <Flex h={'100%'} w={'100%'} pos={'absolute'} justify={'center'}>
       <Box w={100 / props.columns + '%'} h={'100%'} align={'center'}>
@@ -79,6 +74,10 @@ InstagramIcon.propTypes = {
 };
 
 const InstagramGrid = function ({data}) {
+  const imageGrid = {
+    columns: {base: 3, sm: 4, md: 5, lg: 6, xl: 6},
+    items: {base: 3, sm: 4, md: 5, lg: 12, xl: 12},
+  };
   const deviceSize = useBreakpoint();
   const {isOpen, onOpen, onClose} = useDisclosure();
   return (

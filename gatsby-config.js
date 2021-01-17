@@ -79,23 +79,19 @@ module.exports = {
           {
             user(login: "harveyives") {
               pinnedItems(first: 6) {
-                edges {
-                  node {
-                    ... on Repository {
-                      id
+                nodes {
+                  ... on Repository {
+                    id
+                    name
+                    description
+                    openGraphImageUrl
+                    primaryLanguage {
                       name
-                      description
-                      primaryLanguage {
-                        name
-                      }
-                      url
-                      object(expression: "master:readme.md") {
-                        ... on Blob {
-                          text
-                        }
-                        ... on Tree {
-                          id
-                        }
+                    }
+                    url
+                    object(expression: "master:readme.md") {
+                      ... on Blob {
+                        text
                       }
                     }
                   }
