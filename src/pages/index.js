@@ -8,12 +8,14 @@ import { Markdown } from '../components/markdown';
 import Header from '../components/header';
 import Img from 'gatsby-image';
 import { ProjectCard } from '../components/projects/projectCard';
+import { SimpleGrid } from '@chakra-ui/layout';
 
 const Index = ({data}) => (
   <Box>
+    {console.log(data)}
     <Header/>
     <Img fluid={data.trolltunga.childImageSharp.fluid}/>
-    <Container>
+    <Container mb={5}>
       <Markdown data={data.homeJson.content.childMarkdownRemark.html}/>
       <Text p={'2rem 0 2rem 0'}>
         <i>Here&apos;s a component that pulls my Spotify listening history:</i>
@@ -25,8 +27,13 @@ const Index = ({data}) => (
           instagram with a blur in/out animation:
         </i>
       </Text>
+      <SimpleGrid columns={3} spacing={10}>
+        {data.allGithubPinnedRepository.edges.map((e, i) =>
+          <ProjectCard key={i} data={e.node}/>
+        )}
+      </SimpleGrid>
     </Container>
-    {data.githubData.data.user.pinnedItems.edges.map((e, i) => <ProjectCard key={i} data={e.node}/>)}
+
     <InstagramGrid data={data}/>
     <Box height={40}/>
   </Box>
@@ -46,6 +53,32 @@ export const query = graphql`
           html
           frontmatter {
             title
+          }
+        }
+      }
+    }
+    allGithubPinnedRepository {
+      edges {
+        node {
+          children {
+            ... on File {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+                internal {
+                  type
+                }
+              }
+            }
+          }
+          data {
+            title
+            primaryLanguage {
+              name
+            }
+            description
+            name
           }
         }
       }
