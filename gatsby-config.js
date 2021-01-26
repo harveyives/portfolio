@@ -26,7 +26,12 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          `gatsby-remark-images-anywhere`,
+          {
+            resolve: `gatsby-remark-images-anywhere`,
+            options: {
+              quality: 80,
+            }
+          },
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {

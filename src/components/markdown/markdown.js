@@ -7,25 +7,31 @@ const BoxWithHeadings = styled(Box)`
   p,
   ul,
   ol {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
   h1 {
     font-size: 3rem;
+    font-weight: bold;
   }
   h2 {
     font-size: 2rem;
+    font-weight: bold;
   }
   h3 {
     font-size: 1.875rem;
+    font-weight: bold;
   }
   h4 {
     font-size: 1.5rem;
+    font-weight: bold;
   }
   h5 {
     font-size: 1.25rem;
+    font-weight: bold;
   }
   h6 {
     font-size: 1.15rem;
+    font-weight: bold;
   }
 `;
 

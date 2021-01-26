@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Badge, Link, Text } from '@chakra-ui/react';
+import { Link } from 'gatsby';
+import { Badge, Text } from '@chakra-ui/react';
 import { Box, Flex } from '@chakra-ui/layout';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
@@ -8,7 +9,7 @@ import Img from 'gatsby-image';
 export const ProjectCard = ({data, children }) => {
   console.log(children);
   return (
-    <Link href={`/projects/${data.data.name}`}>
+    <Link to={`/projects/${data.data.name}`}>
       <Box boxShadow="xs" p="3" rounded="md" maxW="320px">
         <Box rounded="md">
           { console.log(data.children)}
