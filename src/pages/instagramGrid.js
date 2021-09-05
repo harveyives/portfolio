@@ -8,6 +8,7 @@ import { FaInstagram } from 'react-icons/all';
 import { useDisclosure } from '@chakra-ui/hooks';
 import styled from '@emotion/styled';
 import { InView } from 'react-intersection-observer';
+import ResponsiveGrid from '../components/responsiveGrid/responsiveGrid';
 
 if (typeof window !== 'undefined') {
   require('react-intersection-observer');
@@ -74,14 +75,14 @@ InstagramIcon.propTypes = {
 };
 
 const InstagramGrid = function ({data}) {
-  const imageGrid = {
-    columns: {base: 3, sm: 4, md: 5, lg: 6, xl: 6},
-    items: {base: 3, sm: 4, md: 5, lg: 12, xl: 12},
+  const grid = {
+    columnSizes: {base: 3, sm: 4, md: 5, lg: 6, xl: 6},
+    itemCounts: {base: 3, sm: 4, md: 5, lg: 12, xl: 12}
   };
   const deviceSize = useBreakpoint();
   const {isOpen, onOpen, onClose} = useDisclosure();
   return (
-    <div>
+    <Box>
       <InView
         as="div"
         threshold={1}
@@ -90,13 +91,9 @@ const InstagramGrid = function ({data}) {
         }}
       >
         <Grid pos={'relative'} style={{overflow: 'hidden'}}>
-          <Grid
-            templateColumns={`repeat(${imageGrid.columns[deviceSize]}, 1fr)`}
-            gap={0}
-          >
+          <ResponsiveGrid {...grid}>
             {data.allInstaNode.edges
               .map(it => it.node)
-              .slice(0, imageGrid.items[deviceSize])
               .map(it => (
                 <BlurredImg
                   key={it.id}
@@ -108,15 +105,14 @@ const InstagramGrid = function ({data}) {
                   open={isOpen ? 1 : 0}
                 />
               ))}
-          </Grid>
-
+          </ResponsiveGrid>
           <InstagramIcon
-            columns={imageGrid.columns[deviceSize]}
+            columns={grid.columnSizes[deviceSize]}
             open={isOpen}
           />
         </Grid>
       </InView>
-    </div>
+    </Box>
   );
 };
 

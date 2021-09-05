@@ -29,7 +29,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images-anywhere`,
             options: {
-              quality: 80,
+              quality: 80
             }
           },
           {

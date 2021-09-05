@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Container, Text } from '@chakra-ui/react';
+import { Box, Container, IconButton, Link, Text } from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import { MusicHistory } from '../features/musicHistory/musicHistory';
 import InstagramGrid from './instagramGrid';
 import { Markdown } from '../components/markdown';
 import Header from '../components/header';
-import Img from 'gatsby-image';
 import { ProjectCard } from '../components/projects/projectCard';
 import { SimpleGrid } from '@chakra-ui/layout';
+import { FaFacebookMessenger, FaGithub, FaLinkedin, FaSpotify } from 'react-icons/all';
+
+const IconLink = props => (
+  <Link href={props.url}>
+    <IconButton variant={'link'} w={'100%'} h={'100%'} icon={props.icon}/>
+  </Link>
+);
 
 const Index = ({data}) => (
   <Box>
-    {console.log(data)}
     <Header/>
-    <Img fluid={data.trolltunga.childImageSharp.fluid}/>
+    {/*<Img fluid={data.trolltunga.childImageSharp.fluid}/>*/}
     <Container mb={5}>
       <Markdown data={data.homeJson.content.childMarkdownRemark.html}/>
       <Text p={'2rem 0 2rem 0'}>
@@ -27,15 +32,23 @@ const Index = ({data}) => (
           instagram with a blur in/out animation:
         </i>
       </Text>
-      <SimpleGrid columns={3} spacing={10}>
+      <SimpleGrid columns={2} spacing={5}>
         {data.allGithubPinnedRepository.edges.map((e, i) =>
           <ProjectCard key={i} data={e.node}/>
         )}
       </SimpleGrid>
     </Container>
-
     <InstagramGrid data={data}/>
-    <Box height={40}/>
+    <Container>
+      <Box height={40}>
+        <SimpleGrid columns={4} spacing={5} h={10} p={10}>
+          <IconLink url={'https://open.spotify.com/user/harveyives'} icon={<FaSpotify color={'orange'} size={'50%'}/>}/>
+          <IconLink url={'https://m.me/harveyives'} icon={<FaFacebookMessenger color={'orange'} size={'50%'}/>}/>
+          <IconLink url={'https://linkedin.com/in/harveyives'} icon={<FaLinkedin color={'orange'} size={'48%'}/>}/>
+          <IconLink url={'https://github.com/harveyives'} icon={<FaGithub color={'orange'} size={'50%'}/>}/>
+        </SimpleGrid>
+      </Box>
+    </Container>
   </Box>
 );
 
