@@ -26,7 +26,7 @@ exports.onCreateNode = async ({node, actions, createNodeId, cache }) => {
   const {createNode, createParentChildLink } = actions;
   if (node.internal.type === `GithubData`) {
     node.data.user.pinnedItems.nodes.map(async function (projectData) {
-      // console.log(projectData)
+      console.log(projectData)
 
       let project = {
         id: projectData.id,
@@ -48,24 +48,6 @@ exports.onCreateNode = async ({node, actions, createNodeId, cache }) => {
         }
       };
       createNode(project);
-
-      // let projectMd = {
-      //   id: projectData.id,
-      //   slug: `/projects/${projectData.name}`,
-      //   data: {
-      //     project.
-      //   },
-      //   parent: null,
-      //   children: [],
-      //   internal: {
-      //     type: `MarkdownRemark`,
-      //     contentDigest: crypto
-      //       .createHash(`md5`)
-      //       .update(JSON.stringify(projectData))
-      //       .digest(`hex`),
-      //   }
-      // };
-      // createNode(projectMd);
 
       let fileNode = await createRemoteFileNode({
         url: projectData.openGraphImageUrl, // string that points to the URL of the image
