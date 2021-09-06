@@ -14,6 +14,7 @@ import {
     FaLinkedin,
     FaSpotify,
 } from 'react-icons/all';
+import Img from 'gatsby-image';
 
 const IconLink = props => (
     <Link href={props.url}>
@@ -24,7 +25,7 @@ const IconLink = props => (
 const Index = ({ data }) => (
     <Box>
         <Header />
-        {/*<Img fluid={data.trolltunga.childImageSharp.fluid}/>*/}
+        <Img fluid={data.trolltunga.childImageSharp.fluid} />
         <Container mb={5}>
             <Markdown data={data.homeJson.content.childMarkdownRemark.html} />
             <Text p={'2rem 0 2rem 0'}>
