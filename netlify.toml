@@ -1,3 +1,16 @@
 [build]
   command = "yarn build"
   functions = ".netlify/functions-build"
+  port = 8000
+  targetPort = 8080
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

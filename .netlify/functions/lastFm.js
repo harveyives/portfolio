@@ -1,5 +1,4 @@
-import fetch from "node-fetch"
-
+const fetch = require('node-fetch').default;
 const apiKey = process.env.LASTFM_API_KEY;
 
 exports.handler = async function (event, path) {
