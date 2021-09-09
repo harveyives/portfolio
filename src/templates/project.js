@@ -21,11 +21,18 @@ export const query = graphql`
             data {
                 name
                 description
+                object {
+                    text
+                }
+                openGraphImageUrl
                 primaryLanguage {
                     name
                 }
                 url
                 title
+            }
+            childMarkdownRemark {
+                html
             }
         }
     }
