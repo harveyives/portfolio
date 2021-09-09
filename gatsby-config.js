@@ -27,10 +27,10 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images-anywhere`,
             options: {
-              maxWidth: 590,
-            },
+              quality: 80
+            }
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',
