@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',

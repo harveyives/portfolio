@@ -12,13 +12,15 @@
       "single"
     ],
     "prettier/prettier": "warn",
-    "react/prop-types": "warn",
-    "no-unused-vars": "warn"
+    "react/prop-types": 0,
+    "no-unused-vars": "warn",
+    "indent": ["warn", 4]
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "prettier",
+    "prettier/react"
   ],
   "plugins": ["prettier", "jsx-a11y"],
   "settings": {
